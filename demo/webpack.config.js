@@ -1,6 +1,11 @@
 const path = require('path');
 const fs = require('fs');
 
+const distPath = path.resolve(__dirname, 'dist');
+if (!fs.existsSync(distPath)) {
+  fs.mkdirSync(distPath, { recursive: true });
+}
+
 module.exports = {
   entry: './index.js',
   mode: 'production',
